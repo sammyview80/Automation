@@ -4,3 +4,6 @@ Algorithm for deletion of %temp% file on each startup.
 1. Get the directory of %temp%.
 2. Delete the files permanently.
 3. If the file can't be deleted then handel the error for skip of the file.
+
+
+os.walk(): Will return is a generator that return a tuple of rootdir, dirs and files. It iterate as FIFO. First In First Out. 

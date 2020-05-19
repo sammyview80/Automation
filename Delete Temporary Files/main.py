@@ -10,6 +10,12 @@ tempDir = Dir().get_temp_dir
 # tempDir = r'C:\Users\sammy\Desktop'
 
 def delete_temp(tempDir):
+
+    """
+        Takes an argument of directory. 
+        -tempdir: directory of the file.
+    
+    """
     for roots, dirs, files in os.walk(tempDir):
         print("Root: {} \n\n\n Dir:{} \n\n\n Files:{}".format(roots, dirs, files))
         if files:
@@ -29,6 +35,7 @@ def delete_temp(tempDir):
             try:
                 Path(dir).rmdir()
             except OSError:
+                # OSError raised when the directory is not empty. Skip the file in one loop and delete the file in reversed order in another loop.
                 continue
 
     for dir in reversed(dirsList):
